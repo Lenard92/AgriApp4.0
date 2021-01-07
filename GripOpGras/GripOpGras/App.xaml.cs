@@ -1,4 +1,5 @@
-﻿using GripOpGras.Views;
+﻿using GripOpGras.Data;
+using GripOpGras.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,6 +9,9 @@ namespace GripOpGras
 {
     public partial class App : Application
     {
+        static TokenDatabaseController tokenDatabase;
+        static UserDatabaseController userDatabase;
+
         public App()
         {
             InitializeComponent();
@@ -28,6 +32,31 @@ namespace GripOpGras
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+
+        public static UserDatabaseController UserDatabase
+        {
+            get
+            {
+                if(userDatabase==null)
+                {
+                    userDatabase = new UserDatabaseController();
+                }
+                return userDatabase;
+            }
+        }
+
+        public static TokenDatabaseController TokenDatabase
+        {
+            get
+            {
+                if (TokenDatabase == null)
+                {
+                    tokenDatabase = new TokenDatabaseController();
+                }
+                return TokenDatabase;
+            }
         }
     }
 }
