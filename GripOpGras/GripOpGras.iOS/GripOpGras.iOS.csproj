@@ -150,6 +150,12 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon.Png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LoginIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\GripOpGras\GripOpGras.projitems" Label="Shared" />
 </Project>
