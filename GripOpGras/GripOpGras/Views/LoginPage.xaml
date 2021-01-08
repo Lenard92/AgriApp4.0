@@ -7,7 +7,14 @@
         <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
             <Image x:Name="LogInIcon" Source="LoginIcon.png" Margin="0,80,0,0"/>
         </StackLayout>
-
+        <StackLayout x:Name="LoginEntriesStack">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>40,0,40,0</OnIdiom.Phone>
+                    <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+        
       
          
         
@@ -18,7 +25,7 @@
             <Label x:Name="Lbl_Password" Text="wachtwoord"/>
             <Entry x:Name="Entry_Password" Placeholder="voer hier uw wachtwoord in"/>
             <Button x:Name="Btn_Signin" Text="log in" Clicked="SignInProcedure"/>
-        
+        </StackLayout>
         
     </StackLayout>
 </ContentPage>

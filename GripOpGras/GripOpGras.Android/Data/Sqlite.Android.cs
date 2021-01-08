@@ -13,24 +13,26 @@ using GripOpGras.Data;
 using System.IO;
 using Xamarin.Forms;
 using GripOpGras.Droid.Data;
+using SQLite;
 
-[assembly: Dependency(typeof(SQLite_Android))]
+[assembly: Dependency(typeof(SqLite_Android))]
 
 
 namespace GripOpGras.Droid.Data
 {
-    class SQLite_Android : lSQlite
+    public class SqLite_Android : ISQLite  
     {
-        public SQLite_Android() { }
-        public lSQlite.SQLiteConnection GetConnection()
+        public SqLite_Android() { }
+        public SQLite.SQLiteConnection GetConnection()
         {
 
         var sqliteFileName = "TestDB.db3";
-        string = documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
         var path = Path.Combine(documentsPath, sqliteFileName);
-        var conn = new SQLitePCL.SQLiteConnection(path);
+        var conn = new SQLite.SQLiteConnection(path);
 
         return conn;
+        
         }
     }
 }

@@ -3,6 +3,8 @@ using GripOpGras.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Threading.Tasks;
+using SQLite;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace GripOpGras

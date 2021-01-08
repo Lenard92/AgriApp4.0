@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GripOpGras.Models;
+using Xamarin.Forms;
+using System.Linq;
+using System.Threading.Tasks;
 using SQLite;
-
 
 namespace GripOpGras.Data
 {
@@ -14,7 +14,7 @@ namespace GripOpGras.Data
 
         public UserDatabaseController()
         {
-            database = DependencyService.GetlSQLite > ().GetConnection();
+            database = DependencyService.Get<ISQLite>().GetConnection();
             database.CreateTable<User>();
         }
 
@@ -28,14 +28,13 @@ namespace GripOpGras.Data
                 }
                 else
                 {
-                    return.database.Table<User>().First();
+                    return database.Table<User>().First();
                 }
-
-
             }
 
         }
-        public int SaveUser(User user);
+
+        public int SaveUser(User user)
         {
 
             lock(locker)
@@ -47,7 +46,7 @@ namespace GripOpGras.Data
                 }
                 else
                 {
-                    return database.Insert(user);
+                    return database.InsertOrReplace(user);
                 }
             }
     
@@ -59,7 +58,6 @@ namespace GripOpGras.Data
             {
                 return database.Delete<User>(id);
             }
-        }   
+        }          
     }
 }
-

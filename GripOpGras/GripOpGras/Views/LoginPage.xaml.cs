@@ -33,6 +33,10 @@ namespace GripOpGras.Views
             if (user.CheckInformation())
             {
                 DisplayAlert("Login", "Login Succes", "Oke");
+                App.UserDatabase.SaveUser(user);
+                
+
+
             }
             else
             {

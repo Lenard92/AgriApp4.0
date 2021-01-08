@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using GripOpGras.Models;
 using SQLite;
-
+using Xamarin.Forms;
+using System.Linq;
 
 namespace GripOpGras.Data
 {
@@ -14,7 +16,7 @@ namespace GripOpGras.Data
 
         public TokenDatabaseController()
         {
-            database = DependencyService.GetlSQLite > ().GetConnection();
+            database = DependencyService.Get<ISQLite>().GetConnection();
             database.CreateTable<Token>();
         }
 
@@ -28,19 +30,19 @@ namespace GripOpGras.Data
                 }
                 else
                 {
-                    return.database.Table<Token>().First();
+                    return database.Table<Token>().First();
                 }
 
 
             }
 
         }
-        public int SaveToken(Token Token);
+        public int SaveToken(Token Token)
         {
 
-            lock(locker)
+            lock (locker)
             {
-                if(Token.Id !=0)
+                if (Token.Id != 0)
                 {
                     database.Update(Token);
                     return Token.Id;
@@ -50,16 +52,18 @@ namespace GripOpGras.Data
                     return database.Insert(Token);
                 }
             }
-    
+
         }
-        
+
         public int DeleteToken(int id)
-{
-    lock (locker)
-    {
-        return database.Delete<Token>(id);
-    }
-}   
+        {
+            lock (locker)
+            {
+                return database.Delete<Token>(id);
+            }
+
+
+        }
     }
 }
 
