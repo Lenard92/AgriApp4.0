@@ -46,7 +46,7 @@ namespace GripOpGras.Data
                 }
                 else
                 {
-                    return database.InsertOrReplace(user);
+                    return database.Insert(user);
                 }
             }
     

@@ -2,30 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GripOpGras.Views.LoginPage">
-    <StackLayout x:Name="MasterLayout">
+    <ContentPage.Content>
         
-        <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
-            <Image x:Name="LogInIcon" Source="LoginIcon.png" Margin="0,80,0,0"/>
-        </StackLayout>
-        <StackLayout x:Name="LoginEntriesStack">
-            <StackLayout.Padding>
-                <OnIdiom x:TypeArguments="Thickness">
-                    <OnIdiom.Phone>40,0,40,0</OnIdiom.Phone>
-                    <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
-                </OnIdiom>
-            </StackLayout.Padding>
+    
+        <StackLayout x:Name="MasterLayout">
         
-      
-         
-        
-            <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true" />
+            <StackLayout x:Name="LogoStack" VerticalOptions="FillAndExpand">
+                <Image x:Name="LogInIcon" Source="LoginIcon.png" Margin="0,80,0,0"/>
+            </StackLayout>
+            <StackLayout x:Name="LoginEntriesStack">
+                    <StackLayout.Padding>
+                        <OnIdiom x:TypeArguments="Thickness">
+                            <OnIdiom.Phone>40,0,40,0</OnIdiom.Phone>
+                            <OnIdiom.Tablet>140,150,140,0</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </StackLayout.Padding>
+                       
+                        
+                     
+                           
+                   
+                
+                    <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true" />
 
-            <Label x:Name="Lbl_Username" Text="Gebruikersnaam"/>
-            <Entry x:Name="Entry_Username" Placeholder="Voer hier uw gebruikersnaam in"/>
-            <Label x:Name="Lbl_Password" Text="wachtwoord"/>
-            <Entry x:Name="Entry_Password" Placeholder="voer hier uw wachtwoord in"/>
-            <Button x:Name="Btn_Signin" Text="log in" Clicked="SignInProcedure"/>
-        </StackLayout>
+                    <Label x:Name="Lbl_Username" Text="Gebruikersnaam"/>
+                    <Entry x:Name="Entry_Username" Placeholder="Voer hier uw gebruikersnaam in"/>
+                    <Label x:Name="Lbl_Password" Text="wachtwoord"/>
+                    <Entry x:Name="Entry_Password" Placeholder="voer hier uw wachtwoord in"/>
+                    <Button x:Name="Btn_Signin" Text="log in" Clicked="SignInProcedure"/>
+                    
+            </StackLayout>
         
-    </StackLayout>
+        
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

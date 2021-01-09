@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 using System.Threading.Tasks;
 using SQLite;
 
+
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace GripOpGras
 {
@@ -19,6 +20,7 @@ namespace GripOpGras
             InitializeComponent();
 
             MainPage = new LoginPage();
+            //MainPage = new NavigationPage(new LoginPage(new Page1()));
         }
 
         protected override void OnStart()
@@ -49,16 +51,6 @@ namespace GripOpGras
             }
         }
 
-        public static TokenDatabaseController TokenDatabase
-        {
-            get
-            {
-                if (TokenDatabase == null)
-                {
-                    tokenDatabase = new TokenDatabaseController();
-                }
-                return TokenDatabase;
-            }
-        }
+   
     }
 }
