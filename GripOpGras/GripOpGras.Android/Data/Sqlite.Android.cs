@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using GripOpGras.Data;
+using GripOpGras.Models;
+using GripOpGras.Views.Menu;
 using System.IO;
 using Xamarin.Forms;
 using GripOpGras.Droid.Data;

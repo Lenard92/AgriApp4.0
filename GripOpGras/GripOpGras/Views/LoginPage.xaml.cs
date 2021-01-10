@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using GripOpGras.Models;
-
+using GripOpGras.Views.Menu;
 
 namespace GripOpGras.Views
 {
@@ -34,8 +34,12 @@ namespace GripOpGras.Views
             {
                 DisplayAlert("Login", "Login Succes", "Oke");
                 App.UserDatabase.SaveUser(user);
+                //await Navigation.PushAsync(new Dashboard());
+                if(Device.OS == TargetPlatform.Android)
+                {
+                    Application.Current.MainPage = new NavigationPage(new Dashboard());
+                }
                 
-
 
             }
             else
