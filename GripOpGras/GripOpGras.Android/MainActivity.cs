@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+Forms.SetFlags("CollectionView_Experimental")
 
 namespace GripOpGras.Droid
 {

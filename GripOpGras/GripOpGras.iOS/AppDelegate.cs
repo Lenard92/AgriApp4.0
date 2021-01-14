@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+Forms.SetFlags("CollectionView_Experimental")
 
 namespace GripOpGras.iOS
 {

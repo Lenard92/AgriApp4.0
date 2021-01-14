@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Threading.Tasks;
 using SQLite;
+Forms.SetFlags("CollectionView_Experimental")
 
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
